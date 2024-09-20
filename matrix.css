@@ -1,0 +1,249 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.dashboard {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .8);
+    overflow: hidden;
+    z-index: 100;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.dashboard.hilang {
+    transform: scale(0);
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 8px;
+    z-index: 10;
+}
+
+.aritmatika {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 48px;
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 25px rgba(0, 0, 0, .05);
+    transition: .5s;
+}
+
+.aritmatika:hover {
+    transform: scale(.8);
+}
+
+.aritmatika:nth-child(1):hover {
+    background: rgba(100, 200, 255, .3);
+}
+
+.aritmatika:nth-child(2):hover {
+    background: rgba(255, 100, 100, .3);
+}
+
+.aritmatika:nth-child(3):hover {
+    background: rgba(255, 100, 255, .3);
+}
+
+.aritmatika:nth-child(4):hover {
+    background: rgba(100, 255, 100, .3);
+}
+
+.judul {
+    padding: 32px;
+    font-size: 32px;
+    color: rgb(150, 150, 150);
+    z-index: 10;
+}
+
+.main {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pilih-lagi {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+    font-size: 16px;
+    color: rgb(150, 150, 150);
+    cursor: pointer;
+}
+
+header button {
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    background: none;
+    margin: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .07);
+    color: rgb(150, 150, 150);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+header button.dipakai {
+    background: rgba(100, 200, 255, .8);
+    color: rgb(255, 255, 255);
+}
+
+aside {
+    margin-top: 16px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.row::-webkit-scrollbar {
+    width: 0;
+}
+
+.used-operator {
+    display: flex;
+    margin-top: 16px;
+    justify-content: center;
+    font-size: 28px;
+    color: rgb(150, 150, 150);
+}
+
+.inputan-matriks {
+    display: grid;
+    margin-top: 8px;
+    gap: 3px;
+}
+
+label {
+    font-size: 14px;
+    color: rgb(150, 150, 150);
+}
+
+input {
+    background: rgba(100, 200, 255, .8);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.tombol-kirim {
+    margin-top: 16px;
+}
+
+.kirim {
+    padding: 8px;
+    background: rgba(100, 200, 255, .8);
+    color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tampil-hasil {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .8);
+    transition: .5s;
+    z-index: 1000;
+}
+
+.tampil-hasil.sembunyikan {
+    transform: scale(0);
+}
+
+.tutup-hasil {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-size: 16px;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+.tampil-hasil label {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+@media(max-width: 600px) {
+    .row {
+        flex-direction: column;
+        max-height: 400px;
+        overflow: scroll;
+        gap: 8px;
+    }
+    header button {
+        padding: 12px;
+        font-size: 12px;
+    }
+    .pilih-lagi {
+        font-size: 14px;
+    }
+    nav {
+        grid-template-columns: repeat(2, 75px);
+        grid-template-rows: repeat(2, 75px);
+    }
+    .judul {
+        font-size: 24px;
+        padding: 12px;
+    }
+    .aritmatika {
+        font-size: 24px;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.tampil-hasil .inputan-matriks.det {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tampil-hasil .inputan-matriks.det input:nth-child(1) {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 32px;
+}
